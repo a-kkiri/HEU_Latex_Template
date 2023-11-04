@@ -1,0 +1,162 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%HEU课程论文模板
+%%作者：akkiri
+%%License：Creative Commons CC BY 4.0
+%%GitHub：https://github.com/a_kkiri/HEU_Latex_Template
+
+%%最后更改于2023/11/04
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%在"中国科学院大学课程论文模板"基础上修改而来
+%%原作者：jweihe
+%%GitHub：https://github.com/jweihe/UCAS_Latex_Template
+%%Overleaf：https://www.overleaf.com/latex/templates/zhong-guo-ke-xue-yuan-da-xue-ke-cheng-lun-wen-mo-ban/nphpxhhqvnds
+
+
+\ProvidesPackage{HEUReport}
+
+%%页边距
+\RequirePackage[left=2.50cm, right=2.50cm, top=2.50cm, bottom=2.50cm]{geometry}
+
+%%一些必要的宏包
+\RequirePackage[unicode=true,colorlinks,urlcolor=blue,linkcolor=blue,bookmarksnumbered=blue]{hyperref}
+\RequirePackage{latexsym,amssymb,amsmath,amsbsy,amsopn,amstext,amsthm,amsxtra,color,bm,calc,ifpdf}
+\RequirePackage{graphicx}
+\RequirePackage{enumerate}
+\RequirePackage{fancyhdr}
+\RequirePackage{listings}
+\RequirePackage{multirow}
+\RequirePackage{makeidx}
+\RequirePackage{xcolor}
+\RequirePackage{fontspec}
+\RequirePackage{subfigure}
+\PassOptionsToPackage{hyphens}{url}
+\RequirePackage{hyperref}
+\RequirePackage{pythonhighlight}
+
+\RequirePackage{tcolorbox}
+
+\RequirePackage{fontawesome}
+
+%% 定义一些字号和字体
+\newcommand{\sihao}{\fontsize{14pt}{21pt}\selectfont}         % 四号, 1.5 倍行距
+\newcommand{\xiaosi}{\fontsize{12pt}{18pt}\selectfont}        % 小四, 1.5倍行距
+\setCJKfamilyfont{STXinwei}{华文新魏.ttf}
+\newcommand{\STXinwei}{\CJKfamily{STXinwei}}
+
+%% 更改摘要二字的样式
+\renewcommand{\abstractname}{\textbf{\large {摘\quad 要}}} 
+
+%可固定下划线长度
+\makeatletter
+\newcommand\dlmu[2][4cm]{\hskip1pt\underline{\hb@xt@ #1{\hss#2\hss}}\hskip3pt}
+\makeatother
+
+%更改主题
+ \hypersetup{
+%     colorlinks=true,
+    linkcolor=black,
+%     filecolor=blue,      
+%     urlcolor=Magenta,
+    citecolor=black,
+}
+
+%%对一些autoref的中文引用名作修改
+\def\equationautorefname{式}
+\def\footnoteautorefname{脚注}
+\def\itemautorefname{项}
+\def\figureautorefname{图}
+\def\tableautorefname{表}
+\def\partautorefname{篇}
+\def\appendixautorefname{附录}
+\def\chapterautorefname{章}
+\def\sectionautorefname{节}
+\def\subsectionautorefname{小小节}
+\def\subsubsectionautorefname{subsubsection}
+\def\paragraphautorefname{段落}
+\def\subparagraphautorefname{子段落}
+\def\FancyVerbLineautorefname{行}
+\def\theoremautorefname{定理}
+
+\newtheorem{Theorem}{定理}[section]
+\newtheorem{Lemma}[Theorem]{引理}
+\newtheorem{Corollary}[Theorem]{推论}
+\newtheorem{Proposition}[Theorem]{命题}
+\newtheorem{Definition}[Theorem]{定义}
+\newtheorem{Example}[Theorem]{例}
+
+%%参考文献设置
+\newcommand{\reference}{
+%\nocite{*}   %打开此选项会列出bib里面的所有参考文献
+\bibliographystyle{unsrt} %规定了参考文献的格式
+\begin{center}%居中
+	\bibliography{reference} %调出LaTeX生成参考文献列表
+\end{center}
+}
+
+%%文本框设置
+\newcommand{\tbox}[1]{
+\begin{center}
+\begin{tcolorbox}[colback=gray!10,%gray background
+                  colframe=black,% black frame colour
+                  width=8cm,% Use 8cm total width,
+                  arc=1mm, auto outer arc,
+                  boxrule=0.5pt,
+                 ]
+{#1}
+\end{tcolorbox}
+\end{center}
+}
+
+%%页眉设置
+\pagestyle{fancy}
+\fancyhead[L]{}%%留空则不显示
+\fancyhead[C]{}%%留空则不显示
+\fancyhead[R]{}%%留空则不显示
+
+
+%封面页设置
+{   
+    \title{ \vspace{0.5cm}\STXinwei \fontsize{50pt}{1pt} \selectfont \textbf{{课程设计}} \par
+    \vspace{2.5cm} }
+
+    \author{
+    \vspace{0.5cm} 
+    \songti \sihao 课程名称:\ \dlmu[8cm]{\xiaosi X\ X\ X\ X} \qquad \\ %课程名称
+    \vspace{0.5cm}
+    \songti \sihao 班\qquad 级:\ \dlmu[8cm]{\xiaosi 20200000} \qquad  \\ %班级
+    \vspace{0.5cm}
+    \songti \sihao 学\qquad 号:\ \dlmu[8cm]{\xiaosi 2020000000} \qquad  \\ %学号
+    \vspace{0.5cm}
+    \songti \sihao 姓\qquad 名:\ \dlmu[8cm]{\xiaosi X\ X\ X} \qquad  \\ %姓名
+    \vspace{0.5cm}
+    \songti \sihao 任课教师:\ \dlmu[8cm]{\xiaosi X\ X\ X} %任课教师
+    }
+
+    \date{} % 括号里输入 \today 可以显示今天的日期
+    
+}
+
+%%在这里可更改封面logo
+\newcommand{\cover}{
+%%封面校名logo，图片都在figures文件夹里
+\begin{figure}
+	\centering
+        \vspace{2.4cm}
+	\includegraphics[width=10.5cm, height=1.4cm]{figures/heu_title.jpg}
+\end{figure}
+
+\maketitle
+
+%% 评价表，不需要可以注释掉
+\begin{center}
+    \begin{tabular}{ |l| } 
+    \hline
+    \heiti 大作业成绩： \hspace{12cm} \\ \\
+    \hline
+    \heiti 任课教授评语： \\ \\ \\ \\ \\ \\
+    \hline
+    \end{tabular}
+\end{center}
+
+}
