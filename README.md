@@ -33,7 +33,7 @@
 使用时需前往`HEUReport.sty` 对标题、副标题、姓名、学号、院所、页眉等进行设置，然后编辑`main.tex`进行正文编写
 
 
-|  [封面效果图](https://github.com/a-kkiri/HEU_Latex_Template/blob/main/figures/template_cover.jpg) |  [目录效果图](https://github.com/a-kkiri/HEU_Latex_Template/blob/main/figures/template_page2.jpg)| 
+|  [封面效果图](https://github.com/a-kkiri/HEU_Latex_Template/blob/main/figures/template_cover.jpg) |  [正文效果图](https://github.com/a-kkiri/HEU_Latex_Template/blob/main/figures/template_page2.jpg)| 
 |:---:|:---:|
 | ![Résumé](https://github.com/a-kkiri/HEU_Latex_Template/blob/main/figures/template_cover.jpg?raw=true) | ![Résumé](https://github.com/a-kkiri/HEU_Latex_Template/blob/main/figures/template_page2.jpg?raw=true)| 
 
