@@ -3,6 +3,7 @@
 %%作者：akkiri
 %%License：Creative Commons CC BY 4.0
 %%GitHub：https://github.com/a-kkiri/HEU_Latex_Template
+%%Overleaf：https://www.overleaf.com/latex/templates/ha-er-bin-gong-cheng-da-xue-ke-cheng-lun-wen-mo-ban/zyxyqtpdkdzy
 
 %%最后更改于2023/11/04
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -33,9 +34,7 @@
 \PassOptionsToPackage{hyphens}{url}
 \RequirePackage{hyperref}
 \RequirePackage{pythonhighlight}
-
 \RequirePackage{tcolorbox}
-
 \RequirePackage{fontawesome}
 
 %% 定义一些字号和字体
@@ -117,20 +116,20 @@
 
 %封面页设置
 {   
-    \title{ \vspace{0.5cm}\STXinwei \fontsize{50pt}{1pt} \selectfont \textbf{{课程设计}} \par
+    \title{ \vspace{0.5cm}\STXinwei \fontsize{50pt}{1pt} \selectfont \textbf{{\tplTitle}} \par
     \vspace{2.5cm} }
 
     \author{
     \vspace{0.5cm} 
-    \songti \sihao 课程名称:\ \dlmu[8cm]{\xiaosi X\ X\ X\ X} \qquad \\ %课程名称
+    \songti \sihao 课程名称:\ \dlmu[8cm]{\xiaosi \tplCourse} \qquad \\ %课程名称
     \vspace{0.5cm}
-    \songti \sihao 班\qquad 级:\ \dlmu[8cm]{\xiaosi 20200000} \qquad  \\ %班级
+    \songti \sihao 班\qquad 级:\ \dlmu[8cm]{\xiaosi \tplClass} \qquad  \\ %班级
     \vspace{0.5cm}
-    \songti \sihao 学\qquad 号:\ \dlmu[8cm]{\xiaosi 2020000000} \qquad  \\ %学号
+    \songti \sihao 学\qquad 号:\ \dlmu[8cm]{\xiaosi \tplID} \qquad  \\ %学号
     \vspace{0.5cm}
-    \songti \sihao 姓\qquad 名:\ \dlmu[8cm]{\xiaosi X\ X\ X} \qquad  \\ %姓名
+    \songti \sihao 姓\qquad 名:\ \dlmu[8cm]{\xiaosi \tplName} \qquad  \\ %姓名
     \vspace{0.5cm}
-    \songti \sihao 任课教师:\ \dlmu[8cm]{\xiaosi X\ X\ X} %任课教师
+    \songti \sihao 任课教师:\ \dlmu[8cm]{\xiaosi \tplTeacher} %任课教师
     }
 
     \date{} % 括号里输入 \today 可以显示今天的日期
@@ -150,13 +149,12 @@
 
 %% 评价表，不需要可以注释掉
 \begin{center}
-    \begin{tabular}{ |l| } 
+    \begin{tabular}{|l|} 
     \hline
-    \heiti 大作业成绩： \hspace{12cm} \\ \\
+    \heiti \multirow{2}*{大作业成绩：} \hspace{12cm} \\ \\
     \hline
-    \heiti 任课教授评语： \\ \\ \\ \\ \\ \\
+    \heiti \multirow{2}*{任课教师评语：} \\ \\ \\ \\ \\ \\ \\
     \hline
     \end{tabular}
 \end{center}
-
 }
