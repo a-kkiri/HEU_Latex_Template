@@ -33,7 +33,7 @@
 使用时需前往`HEUReport.sty` 对标题、副标题、姓名、学号、院所、页眉等进行设置，然后编辑`main.tex`进行正文编写
 
 --------- 
- **强烈推荐使用[Overleaf](https://www.overleaf.com/latex/templates/ha-er-bin-gong-cheng-da-xue-ke-cheng-lun-wen-mo-ban/zyxyqtpdkdzy)**   模板已上传，打开即用
+ **强烈推荐使用[Overleaf](https://www.overleaf.com/latex/templates/ha-er-bin-gong-cheng-da-xue-ke-cheng-zuo-ye-mo-ban/zyxyqtpdkdzy)**   模板已上传，打开即用
 
 ---------
 
